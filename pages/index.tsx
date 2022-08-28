@@ -9,7 +9,7 @@ const posts = [
 
 const Home: NextPage = () => {
   return (
-    <div className="container mx-auto px-10 mb-8 bg-gray-300">
+    <div className="container mx-auto px-10 mb-8">
       <Head>
         <title>CMS Blog</title>
         <link rel="icon" href="/favicon.ico" />
