@@ -3,10 +3,10 @@ import Head from 'next/head';
 import { PostCard, Categories, PostWidget } from '../components/index';
 import { getPosts } from '../services';
 
-const posts = [
-  { title: 'React Testing', excerpt: 'Learn React Testing' },
-  { title: 'React with tailwind', excerpt: 'Learn React with Tailwind' },
-];
+// const posts = [
+//   { title: 'React Testing', excerpt: 'Learn React Testing' },
+//   { title: 'React with tailwind', excerpt: 'Learn React with Tailwind' },
+// ];
 
 const Home: NextPage = ({ posts }: any) => {
   return (
@@ -24,7 +24,7 @@ const Home: NextPage = ({ posts }: any) => {
         </div>
         <div className="lg:col-span-4 col-span-1">
           <div className="lg:sticky relative top-8">
-            <PostWidget />
+            <PostWidget categories={undefined} slug={undefined} />
             <Categories />
           </div>
         </div>
