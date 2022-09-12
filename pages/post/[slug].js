@@ -33,3 +33,11 @@ const PostDetails = () => {
 };
 
 export default PostDetails;
+
+export async function getStaticProps({ params }) {
+  const posts = (await getPosts()) || [];
+
+  return {
+    props: { posts },
+  };
+}
