@@ -16,6 +16,7 @@ const CommentsForm = () => {
     const { value: comment } = commentEl.current;
     const { value: name } = nameEl.current;
     const { value: email } = nameEl.current;
+    const { checked: storeData } = storeDataEl.current;
 
     if (!comment || !name || !email) {
       setError(true);
@@ -28,6 +29,14 @@ const CommentsForm = () => {
       comment,
       slug,
     };
+
+    if (storeData) {
+      localStorage.setItem('name', name);
+      localStorage.setItem('email', email);
+    } else {
+      localStorage.removeItem('name', name);
+      localStorage.removeItem('email', email);
+    }
   };
 
   return (
