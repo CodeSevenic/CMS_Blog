@@ -8,6 +8,7 @@ import { GraphQLClient, gql } from 'graphql-request';
 const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINTS;
 
 export default async function comments(req, res) {
+  console.log(req.body);
   const graphQLClient = new GraphQLClient(graphqlAPI, {
     headers: {
       authorization: `Bearer ${process.env.GRAPH_CMS_TOKEN}`,
@@ -34,5 +35,10 @@ export default async function comments(req, res) {
     }
   `;
 
-  const result = await graphQLClient.request(query, req.body);
+  try {
+    const result = await graphQLClient.request(query, req.body);
+    return res.status(200).send(result);
+  } catch (err) {
+    console.log(err);
+  }
 }

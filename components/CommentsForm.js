@@ -22,7 +22,7 @@ const CommentsForm = ({ slug }) => {
 
     const { value: comment } = commentEl.current;
     const { value: name } = nameEl.current;
-    const { value: email } = nameEl.current;
+    const { value: email } = emailEl.current;
     const { checked: storeData } = storeDataEl.current;
 
     if (!comment || !name || !email) {
