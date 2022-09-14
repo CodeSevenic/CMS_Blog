@@ -18,6 +18,7 @@ const CommentsForm = ({ slug }) => {
   }, []);
 
   const handleCommentSubmission = () => {
+    console.log('clicked');
     setError(false);
 
     const { value: comment } = commentEl.current;
@@ -46,6 +47,7 @@ const CommentsForm = ({ slug }) => {
     }
 
     submitComment(commentObj).then((res) => {
+      console.log('clicked RES');
       setShowSuccessMessage(true);
       setTimeout(() => {
         setShowSuccessMessage(false);

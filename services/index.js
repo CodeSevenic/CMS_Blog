@@ -135,6 +135,7 @@ export const getCategories = async () => {
 };
 
 export const submitComment = async (obj) => {
+  console.log('clicked API');
   const result = await fetch('/api/comments', {
     method: 'POST',
     body: JSON.stringify(obj),
