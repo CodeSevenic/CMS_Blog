@@ -6,12 +6,12 @@
 import { GraphQLClient, gql } from 'graphql-request';
 
 const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINTS;
+const graphCmsToken = process.env.GRAPH_CMS_TOKEN;
 
 export default async function comments(req, res) {
-  console.log(req.body);
   const graphQLClient = new GraphQLClient(graphqlAPI, {
     headers: {
-      authorization: `Bearer ${process.env.GRAPH_CMS_TOKEN}`,
+      authorization: `Bearer ${graphCmsToken}`,
     },
   });
 
