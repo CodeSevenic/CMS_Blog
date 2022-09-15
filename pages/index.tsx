@@ -2,6 +2,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import { PostCard, Categories, PostWidget } from '../components/index';
 import { getPosts } from '../services';
+import FeaturedPosts from '../sections/FeaturedPosts';
 
 // const posts = [
 //   { title: 'React Testing', excerpt: 'Learn React Testing' },
@@ -15,7 +16,7 @@ const Home: NextPage = ({ posts }: any) => {
         <title>CMS Blog</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      <FeaturedPosts />
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
         <div className="lg:col-span-8 col-span-1">
           {posts.map((post: any, index: number) => (
